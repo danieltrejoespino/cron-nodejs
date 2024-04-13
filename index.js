@@ -1,6 +1,9 @@
-const {smsMasivo} = require('./src/cron/cron-sms') 
+const { iniciarServidor, iniciarTarea } = require('./src/app');
 
-if (!smsMasivo.running) {  
-  smsMasivo.start();
-  console.log('Sms masivo campana Digital iniciado');
-}
+const puerto = 3000;
+
+// Iniciar el servidor Express
+iniciarServidor(puerto);
+
+// Iniciar la tarea cron
+iniciarTarea();
