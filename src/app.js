@@ -1,5 +1,5 @@
 const express = require("express");
-const { smsMasivo } = require("./cron/cron-sms");
+const { smsMasivoDigital } = require("./cron/cron-sms");
 
 const iniciarServidor = () => {
   const puerto = 3010;
@@ -11,10 +11,10 @@ const iniciarServidor = () => {
 
     switch (accion) {
       case 1: //1
-        smsMasivo.start();
+      smsMasivoDigital.start();
         break;
       case 2: //2
-        smsMasivo.stop();
+      smsMasivoDigital.stop();
         break;
 
       default:
@@ -29,8 +29,8 @@ const iniciarServidor = () => {
 };
 
 const iniciarTarea = () => {
-  if (!smsMasivo.running) {
-    smsMasivo.start();
+  if (!smsMasivoDigital.running) {
+    smsMasivoDigital.start();
     console.log("Sms masivo campana Digital iniciado");
   }
 };
