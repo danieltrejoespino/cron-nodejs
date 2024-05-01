@@ -1,38 +1,27 @@
-const express = require("express");
-const { smsMasivoDigital } = require("./cron/cron-sms");
+delete require.cache[require.resolve("./cron/cron-sms")];
 
-const iniciarServidor = () => {
-  const puerto = 3010;
-  const app = express();
+const tasks = require("./cron/cron-sms");
 
-  app.get("/crud-cron", (req, res) => {
-    const accion = req.params.accion;
-    const name = req.params.name;
 
-    switch (accion) {
-      case 1: //1
-      smsMasivoDigital.start();
-        break;
-      case 2: //2
-      smsMasivoDigital.stop();
-        break;
-
-      default:
-        break;
-    }
-    res.send("accion apply");
-  });
-
-  app.listen(puerto, () => {
-    console.log(`Running ${puerto}`);
-  });
-};
-
-const iniciarTarea = () => {
-  if (!smsMasivoDigital.running) {
-    smsMasivoDigital.start();
+const startTasks = () => {
+  if (!tasks.smsMasivoDigital.running) {
+    tasks.smsMasivoDigital.start();
     console.log("Sms masivo campana Digital iniciado");
   }
+  if (!tasks.smsMasivoScotiabank24.running) {
+    tasks.smsMasivoScotiabank24.start();
+    console.log("Sms masivo campana Scotiabank iniciado");
+  }
+  if (!tasks.smsMasivoScotiabank48.running) {
+    tasks.smsMasivoScotiabank48.start();
+    console.log("Sms masivo campana Scotiabank iniciado");
+  }
 };
+// const startTasks = () => {
+//   if (!tasks.test.running) {
+//     tasks.test.start();
+//     console.log("Cron de prueba iniciado");
+//   } 
+// };
 
-module.exports = { iniciarServidor, iniciarTarea };
+module.exports = {startTasks };

@@ -1,0 +1,31 @@
+'* * * * *'
+
+EL PRIMER * SIGNIFICA MINUTOS 0-59
+  
+EL SEGUNDO * SIGNIFICA HORAS 0-23
+
+EL TERCERO * SIGNIFICA DIAS DEL MES 1-31
+
+EL CUARTO * SIGNIFICA MESES 
+
+EL QUINTO * SIGNIFICA DIAS DE LA SEMANA 0-7
+
+Si al primer * agregamos un /2 sig que correra cada dos minutos 
+
+Si al segundo * agregamos un /2 sig que correra cada dos horas
+
+Si al tercero le remplazamos * por 9 se ejecutara todos los días 9 del mes
+
+Si al cuarto le remplazamos * por 12 significa que solo se ejecutara en diciembre  
+
+si al quinto le remplazamos * por 1 significa que se ejecutara  solo los dias lunes.
+
+ejemplo:
+* * * * * => correra todos los meses todos los dias todas las horas cada minuto
+
+* */8 * * * => correra todos los meses todos los dias cada () horas cada minuto
+
+* * 8 * 7 => correra solo los dias sabado que sean numero 8 de todos los meses cada hora y cada minuto
+
+
+
