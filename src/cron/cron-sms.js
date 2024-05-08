@@ -72,11 +72,28 @@ const smsMasivoScotiabank48 = cron.schedule('0 22 */2 * 1-5', async () => {
   }
 });
 
+
+
+const asistenciaImpulse = cron.schedule('40 11 * * 1-5', async () => {
+  const ruta= url+'assistanceImpulse'  
+  let horaEjecucion = new Date().toLocaleString();  
+  try { 
+
+    const response = await instance.get(ruta);    
+    console.log(response.data);    
+    console.log(`Tarea ejecutada -- ${horaEjecucion}`);
+  } catch (error) {
+    console.log(error);
+  }
+});
+
+
 const tasks = {
   smsMasivoDigital,
   smsMasivoScotiabank24,
   smsMasivoScotiabank48,
-  test
+  test,
+  asistenciaImpulse
 }
 
 module.exports = tasks

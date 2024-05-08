@@ -16,10 +16,17 @@ const startTasks = () => {
     tasks.smsMasivoScotiabank48.start();
     console.log("Sms masivo campana Scotiabank iniciado");
   }
+  if (!tasks.asistenciaImpulse.running) {
+    tasks.asistenciaImpulse.start();
+    console.log("Sms masivo campana Scotiabank iniciado");
+  }
 };
+
+
+
 // const startTasks = () => {
-//   if (!tasks.test.running) {
-//     tasks.test.start();
+//   if (!tasks.asistenciaImpulse.running) {
+//     tasks.asistenciaImpulse.start();
 //     console.log("Cron de prueba iniciado");
 //   } 
 // };
