@@ -40,7 +40,7 @@ const smsMasivoDigital = cron.schedule('45 8 * * 1-5', async () => {
 
 
 
-const smsMasivoScotiabank24 = cron.schedule('0 22 * * 1-5', async () => {
+const smsMasivoScotiabank24 = cron.schedule('0 12 * * 1-5', async () => {
   const ruta= url+'sendSmsMasivoScotiabank'  
   let horaEjecucion = new Date().toLocaleString();  
   try {
@@ -56,7 +56,7 @@ const smsMasivoScotiabank24 = cron.schedule('0 22 * * 1-5', async () => {
   }
 });
 
-const smsMasivoScotiabank48 = cron.schedule('0 22 */2 * 1-5', async () => {
+const smsMasivoScotiabank48 = cron.schedule('30 12 */2 * 1-5', async () => {
   const ruta= url+'sendSmsMasivoScotiabank'  
   let horaEjecucion = new Date().toLocaleString();  
   try {
@@ -74,7 +74,7 @@ const smsMasivoScotiabank48 = cron.schedule('0 22 */2 * 1-5', async () => {
 
 
 
-const asistenciaImpulse = cron.schedule('40 11 * * 1-5', async () => {
+const asistenciaImpulse = cron.schedule('30 11 * * 1-5', async () => {
   const ruta= url+'assistanceImpulse'  
   let horaEjecucion = new Date().toLocaleString();  
   try { 
