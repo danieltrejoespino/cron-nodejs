@@ -27,7 +27,7 @@ const test = cron.schedule('* * * * *', async () => {
 
 // const horario='45 8 * * 1-5'
 const smsMasivoDigital = cron.schedule('45 8 * * 1-5', async () => {
-  const ruta= url+'testApi'  
+  const ruta= url+'sendSmsMasivoDigital'  
   let horaEjecucion = new Date().toLocaleString();  
   try {
     const response = await instance.get(ruta, { httpsAgent });    
